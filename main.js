@@ -167,16 +167,16 @@ function editWork(index) {
     workEditIndex = index
 }
 function searchWork() {
-    let workSearch = document.querySelector('#search').value.toLowerCase();
+    let workSearch = document.querySelector('#searchIp').value.toLowerCase();
     let arrayResult = [];
     for (let i = 0; i < workList.length; i++) {
-        if (workList[i].name.toLowerCase().includes(workSearch)) {
-            arrayResult.push(workList[i]);
+        if (workList[i].workName.toLowerCase().includes(workSearch)) {
+            arrayResult.push(workList[i]);  
         }
     }
     renderData(arrayResult);
 }
-document.querySelector('#search').addEventListener("keydown", function (event) {
+document.querySelector('#searchIp').addEventListener("keydown", function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
         searchWork();
